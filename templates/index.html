@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload Image</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9f5f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+        .logo {
+            width: 100px; /* Adjusted size */
+            height: auto;
+            vertical-align: middle;
+            margin-right: 0px;
+        }
+        h1 {
+            color: #009912; /* Changed color to dark green */
+            margin: 0;
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid #986d00; /* Dark green border */
+            padding: 10px; /* Padding inside the border */
+            border-radius: 8px; /* Rounded corners for the border */
+        }
+        h1 .caption {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 5px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .description {
+            font-weight: 600;
+            color: #333;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <img src="{{ url_for('static', filename='cropcure.png') }}" alt="Logo" class="logo"> CropCure
+        </h1>
+        <p class="caption">Foresee issues early to safeguard yields and boost productivity</p>
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <p class="description">
+            Understanding crop diseases is crucial for maintaining healthy crops and ensuring food security. Crop diseases can significantly impact crop yield and quality, which in turn affects farmers' income and the availability of food. Early detection and accurate diagnosis of these diseases can help in taking timely and effective measures to manage and mitigate their effects.
+        </p>
+        <div class="footer">
+            &copy; 2024 CropCure. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
+

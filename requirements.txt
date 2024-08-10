@@ -1,0 +1,6 @@
+numpy<2
+Pillow
+torch
+torchvision
+flask
+
